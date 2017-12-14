@@ -355,8 +355,8 @@ effect
     $body.addClass('is-star');
 
     function callCanvas (canvas) {
-      var screenpointSplitt = 12000
-      var movingSpeed = 0.2
+      var screenpointSplitt = 8000
+      var movingSpeed = 0.3
       var viewportWidth = $(window).width();
       var viewportHeight = $(window).height();
       var nbCalculated = Math.round(viewportHeight*viewportWidth/screenpointSplitt);
@@ -378,8 +378,8 @@ effect
         },
         velocity: movingSpeed,
         length: nbCalculated,
-        distance: 130,
-        radius: 120,
+        distance: 100,
+        radius: 200,
         stars: []
       };
 

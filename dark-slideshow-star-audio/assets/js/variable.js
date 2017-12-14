@@ -99,5 +99,5 @@ var _cloud4Duration = 61000; // how many seconds does the cloud 4 animation
 _effect = 2
   - star
 =================================================*/
-var _starColor = 'rgba(255, 255, 255, 0.9)';// star color
-var _starWidth = 3;// star width
+var _starColor = 'rgba(230, 43, 30, 0.9)';// star color
+var _starWidth = 4;// star width
