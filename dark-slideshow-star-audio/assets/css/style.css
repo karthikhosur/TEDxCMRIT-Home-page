@@ -1270,3 +1270,25 @@ section {
 @viewport {
   width: device-width;
 }
+
+.button {
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  background-color:black; /* Green */
+  color:white ;
+  padding: 20px 80px;
+  border-radius: 8px;
+  border: 2px solid #E62B1E; 
+  text-align: center;
+}
+
+.button:hover {
+  background-color: #E62B1E; /* Green */
+  color: black;
+  padding: 15px 32px;
+  border-radius: 8px;
+  padding: 20px 80px;
+  border-radius: 8px;
+  border: 2px solid #E62B1E; 
+  text-align: center;
+}

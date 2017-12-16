@@ -18,6 +18,8 @@
 <link rel='stylesheet' href='assets/css/title-size.css'>
 <link rel='stylesheet' href='assets/css/custom.css'>
 <link rel="icon" href="assets/img/favicon.ico">
+<script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+
 </head>
 <body>
 
@@ -79,7 +81,7 @@
           <!-- subscribe form -->
           <form id="form-subscribe" class="form-lg container">
             <input type="text" name="email" class="form-control" placeholder="Email address">
-            <button type="submit">
+            <button type="submit" onclick="savedata()">
               <i class="ion-email"></i>
             </button>
           </form>
@@ -88,6 +90,33 @@
       </div>
     </div>
     <!-- /subscribe -->
+
+    <script>
+        var messagesRef = new Firebase('https://tedxcmrit-cc535.firebaseio.com/');
+        
+        var messageField = document.getElementById('messageInput');
+        var messageResults = document.getElementById('results');
+    
+        // Save data to firebase
+        function savedata(){
+          var message = messageField.value;
+    
+          messagesRef.push({fieldName:'messageField', text:message});
+          messageField.value = '';
+        }
+    
+        // Update results when data is added
+        messagesRef.limitToLast(10).on('child_added', function (snapshot) {
+            var data = snapshot.val();
+            console.log(snapshot.val());
+            var message = data.text;
+    
+            if (message != undefined)
+            {
+              messageResults.value += '\n' + message;
+            }
+        });
+        </script>
 
     <!-- site main -->
     <main id="site-main">
@@ -105,7 +134,11 @@
                     <img class="section-title" src="assets/img/logo-light.png" alt="">
                     
                   <div class="animation section-divider"></div>
+                  <div></br></div>
+               <div>  <button class= "button" stype="button"><a  href=”#”>Application Forms</a></button></div>
+                  
                 </div>
+                
               </div>
               <!-- /setion header -->
 
